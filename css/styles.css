@@ -89,6 +89,8 @@ img {
 }
 
 .site-nav-link {
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -100,13 +102,26 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  position: relative;
 }
 
 .studio {
   color: var(--accent-color);
 }
 
-.portfolio,
+.studio::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--accent-color);
+}
+
 .site-nav-link:hover,
 .site-nav-link:focus,
 .auth-nav-link:hover,
@@ -115,6 +130,8 @@ img {
 .address-link:focus,
 .address-list:hover,
 .address-list:focus {
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 }
 
@@ -128,6 +145,8 @@ img {
 }
 
 .auth-nav-link {
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   align-items: center;
 
@@ -141,6 +160,8 @@ img {
 }
 
 .icon-envelope {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   margin-right: 10px;
   width: 16px;
   height: 12px;
@@ -153,10 +174,14 @@ img {
 .auth-nav-link:focus .icon-envelope,
 .auth-nav-link:hover .icon-smartphone,
 .auth-nav-link:focus .icon-smartphone {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: var(--accent-color);
 }
 
 .icon-smartphone {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   margin-right: 10px;
   width: 10px;
   height: 16px;
@@ -183,6 +208,8 @@ img {
 }
 
 .hero-button {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   border-radius: 4px;
   padding: 10px 32px;
   display: inline-block;
@@ -201,6 +228,8 @@ img {
 }
 .hero-button:hover,
 .hero-button:focus {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--hover-hero-button-color);
 }
 
@@ -219,6 +248,55 @@ img {
   text-transform: uppercase;
 }
 
+.backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 250ms opacity cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: inherit;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--icon-color);
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+
+  cursor: pointer;
+}
 /* ------------------------Особенности компании------------------------ */
 
 .compani-title {
@@ -297,11 +375,31 @@ img {
 }
 
 .work-item {
+  position: relative;
+
   margin-right: 30px;
 }
 
 .work-item:last-child {
   margin-right: 0px;
+}
+
+.work-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  padding: 27px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* ------------------------Наша команда------------------------ */
@@ -394,10 +492,14 @@ img {
 
 .icon-link:hover,
 .icon-link:focus {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
 }
 
 .icon-link {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 44px;
   height: 44px;
@@ -408,6 +510,8 @@ img {
 
 .icon-link:hover .icon-svg,
 .icon-link:focus .icon-svg {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: #fff;
 }
 
@@ -434,6 +538,8 @@ img {
 }
 
 .client-link {
+  transition: 250ms border lcubic-bezier(0.4, 0, 0.2, 1);
+
   width: 170px;
   height: 92px;
   border: 1px solid var(--icon-color);
@@ -445,15 +551,21 @@ img {
 
 .client-link:hover,
 .client-link:focus {
+  transition: 250ms border cubic-bezier(0.4, 0, 0.2, 1);
+
   border: 1px solid var(--accent-color);
 }
 
 .client-icon {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: var(--icon-color);
 }
 
 .client-link:hover .client-icon,
 .client-link:focus .client-icon {
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: var(--accent-color);
 }
 
@@ -508,6 +620,8 @@ img {
 }
 
 .address-link {
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+
   display: block;
 
   color: rgba(255, 255, 255, 0.6);
@@ -539,10 +653,14 @@ img {
 
 .connect-link:hover,
 .connect-link:focus {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
 }
 
 .connect-link {
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   width: 44px;
   height: 44px;
@@ -560,6 +678,23 @@ img {
 }
 
 /* ====================== ПОРТФОЛИО ======================*/
+.portfolio {
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1);
+
+  color: var(--accent-color);
+}
+
+.portfolio::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  bottom: 0;
+  left: 0%;
+
+  background-color: var(--accent-color);
+}
 
 .portfolio-name {
   position: absolute;
@@ -600,14 +735,18 @@ img {
   line-height: 1.63;
   text-align: center;
   cursor: pointer;
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
 .filter-button:focus {
-  background-color: var(--accent-color);
-  color: #ffffff;
+  transition: 250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
+
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  background-color: var(--accent-color);
+  color: #ffffff;
 }
 
 /* ------------------Контент фильтра------------------ */
@@ -623,6 +762,8 @@ img {
 
 .gallery-lists:hover,
 .gallery-lists:focus {
+  transition: 250ms box-shadow cubic-bezier(0.4, 0, 0.2, 1);
+
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -663,4 +804,37 @@ img {
 
   font-size: 16px;
   line-height: 1.87;
+}
+
+.gallery-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-lists:hover .gallery-block,
+.gallery-lists:focus .gallery-block {
+  transform: translateY(0);
+}
+
+.gallery-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  padding: 63px 24px;
+}
+
+.gallery-block .text {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
 }
