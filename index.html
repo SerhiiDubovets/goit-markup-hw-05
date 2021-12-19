@@ -55,7 +55,55 @@
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
           <button class="hero-button" type="button" data-modal-open>Заказать услугу</button>
         </div>
-        
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="modal-button" data-modal-close>
+              <svg class="icon-close" width="18px" height="18px">
+                <use xlink:href="./images/symbol-defs.svg#icon-close-black"></use>
+              </svg>
+            </button>
+
+            <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+            <form action="">
+              <div class="form-block">
+                <label for="name" class="form-label">Имя</label>
+                <input type="text" name="name" class="form-input"> 
+                <div class="form-icon">
+                  <svg width="18px" height="18px">
+                    <use xlink:href="./images/symbol-defs.svg#icon-person-black"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form-block">
+                <label for="phone" class="form-label">Телефон</label>
+                <input type="tel" name="phone" class="form-input">
+                <div class="form-icon">
+                  <svg width="18px" height="18px">
+                    <use xlink:href="./images/symbol-defs.svg#icon-phone-black"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form-block">
+                <label for="mail" class="form-label">Почта</label>
+                <input type="email" name="mail" class="form-input"> 
+                <div class="form-icon">
+                  <svg width="18px" height="18px">
+                    <use xlink:href="./images/symbol-defs.svg#icon-email-black"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="form-block">
+                <label for="comment" class="form-label">Комментарий</label>
+                <textarea name="comment" id="" rows="10" placeholder="Введите текст" class="form-comment"></textarea>
+              </div>
+              <div class="form-checkbox">
+                <input type="checkbox" name="condition">
+                <label for="condition" class="form-condition">Соглашаюсь с рассылкой и принимаю <a href="" class="condition-link">Условия договора</a></label>
+              </div>
+              <button type="submit" class="form-button">Отправить</button>
+            </form>
+          </div>
+        </div>
       </section>
 
       <!-- Особенности компании -->
@@ -296,19 +344,23 @@
           <li class="connect-item"><a class="connect-link" href=""><svg class="connect-svg width="20px" height="20px"><use xlink:href="./images/symbol-defs.svg#icon-linkedin"></use></svg></a></li>
         </ul>
       </div>
+      <div class="subscription">
+        
+        <h3 class="subscription-titles">Подпишитесь на рассылку</h3>
+        <label class="subscription-label" for="mail"></label>
+        <input class="subscription-input" type="text" name="mail" placeholder="E-mail">
+          <button type="submit" class="subscription-button">Подписаться
+            <svg class="subscription-send" width="24px" height="24px">
+          <use xlink:href="./images/symbol-defs.svg#icon-icon-send"></use>
+        </svg>
+          </button>
+        
+      </div>
       </div>
       
     </footer>
 
-    <div class="backdrop is-hidden" data-modal>
-      <div class="modal">
-        <button class="modal-button" data-modal-close>
-          <svg class="icon-close" width="18px" height="18px">
-          <use xlink:href="./images/symbol-defs.svg#icon-close-black"></use>
-        </svg>
-        </button>
-      </div>
-    </div>
+   
     <script src="./js/modal.js"></script>
   </body>
 </html>
